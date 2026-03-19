@@ -8,12 +8,7 @@ services:
     plan: free
     buildCommand: |
       # 安装系统依赖
-      apt-get update && apt-get install -y wkhtmltopdf curl
-      # 设置CARGO_HOME到可写目录
-      export CARGO_HOME=/tmp/cargo
-      export PATH="$CARGO_HOME/bin:$PATH"
-      # 安装Rust（tiktoken需要），直接指定CARGO_HOME
-      curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | CARGO_HOME=$CARGO_HOME sh -s -- -y
+      apt-get update && apt-get install -y wkhtmltopdf
       # 安装Python依赖（使用--no-cache-dir避免只读文件系统问题）
       pip install --no-cache-dir -r requirements.txt
       # 构建前端
@@ -38,7 +33,7 @@ services:
         value: 0.0.0.0
       - key: WEBUI_AUTO_BUILD
         value: false
-    healthCheckPath: /api/v1/health
+    healthCheckPath: /api/health
     disk:
       name: daily-stock-analysis-storage
       mountPath: /data
