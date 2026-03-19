@@ -22,7 +22,7 @@ services:
       - key: AGENT_SKILLS
         value: bull_trend,ma_golden_cross,volume_breakout,shrink_pullback
       - key: DEEPSEEK_API_KEY
-        sync: false
+        value: sk-abfc7c6b300a4ae7b1d0d412a73f7853
       - key: TAVILY_API_KEYS
         sync: false
       - key: STOCK_LIST
