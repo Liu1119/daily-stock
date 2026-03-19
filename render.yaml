@@ -9,8 +9,8 @@ services:
     buildCommand: |
       # 安装系统依赖
       apt-get update && apt-get install -y wkhtmltopdf
-      # 安装Python依赖
-      pip install -r requirements.txt
+      # 安装Python依赖（使用--no-cache-dir避免只读文件系统问题）
+      pip install --no-cache-dir -r requirements.txt
       # 构建前端
       cd apps/dsa-web && npm install && npm run build && cd ../..
     startCommand: python main.py --webui-only
