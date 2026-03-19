@@ -33,6 +33,12 @@ services:
         value: 0.0.0.0
       - key: WEBUI_AUTO_BUILD
         value: false
+      - key: REALTIME_SOURCE_PRIORITY
+        value: tencent,akshare_sina
+      - key: EFINANCE_PRIORITY
+        value: 99
+      - key: AKSHARE_PRIORITY
+        value: 99
     healthCheckPath: /api/health
     disk:
       name: daily-stock-analysis-storage
