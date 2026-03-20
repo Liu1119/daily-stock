@@ -11,6 +11,9 @@ services:
       apt-get update && apt-get install -y wkhtmltopdf
       # 安装Python依赖（使用--no-cache-dir避免只读文件系统问题）
       pip install --no-cache-dir -r requirements.txt
+      # 安装Node.js
+      curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+      apt-get install -y nodejs
       # 构建前端
       cd apps/dsa-web && npm install && npm run build && cd ../..
     startCommand: python main.py --webui-only
