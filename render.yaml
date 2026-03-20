@@ -18,13 +18,15 @@ services:
       - key: AGENT_MODE
         value: true
       - key: AGENT_MAX_STEPS
-        value: 10
+        value: 30
       - key: AGENT_SKILLS
         value: bull_trend,ma_golden_cross,volume_breakout,shrink_pullback
       - key: DEEPSEEK_API_KEY
         value: sk-abfc7c6b300a4ae7b1d0d412a73f7853
       - key: TAVILY_API_KEYS
-        sync: false
+        value: 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
+      - key: FEISHU_WEBHOOK_URL
+        value: https://open.feishu.cn/open-apis/bot/v2/hook/d6930274-cf9f-48d9-80d9-b1f735c43fc2
       - key: STOCK_LIST
         value: 600519,hk00700,AAPL
       - key: PORT
